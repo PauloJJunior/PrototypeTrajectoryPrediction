@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 inputPressDownPos;
     private Vector3 inputReleasePos;
-
+    private float forceMultiplier = 0.3f;
     // Start is called before the first frame update
 
     void Start()
@@ -33,6 +33,18 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+
+    private void OnMouseDrag()
+    {
+        Vector3 forceInit = (Input.mousePosition-inputPressDownPos);
+        Vector3 forceV = (new Vector3(forceInit.x, forceInit.y, z:forceInit.y)) * forceMultiplier;
+
+        //if (isShot) return;
+       // if (!isWall) return;
+
+        DrawTrajectory.instance.UpdateTrajectory(forceVector:forceV, playerRb, staringPoint: transform.position);
+
+    }
     private void OnMouseDown()
     {
         inputPressDownPos = Input.mousePosition;
@@ -40,8 +52,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnMouseUp()
     {
+        
         inputReleasePos = Input.mousePosition;
         ShootPlayer(force: inputReleasePos - inputPressDownPos);
+        
     }
 
 
@@ -52,7 +66,9 @@ public class PlayerController : MonoBehaviour
         if (isShot) return;
         if (!isWall) return;
 
-        playerRb.AddForce(new Vector3(force.x, force.y, force.y) * 2);
+        //DrawTrajectory.instance.HideLine();
+        playerRb.AddForce(new Vector3(force.x, force.y, force.y) * forceMultiplier);
+       // isShot = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -62,7 +78,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             isWall = true;
-            playerRb.drag = 30;
+            playerRb.drag = 0;
         }
     }
 

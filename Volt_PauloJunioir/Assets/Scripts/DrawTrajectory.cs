@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class DrawTrajectory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public static DrawTrajectory instance;
+
+    [SerializeField]
+    private LineRenderer lineRenderer;
+
+
+    [SerializeField]
+    [Range(3, 300)]
+    private int lineSegmentCount = 300;
+
+    private List<Vector3> linePoints = new List<Vector3>();
+
+    private void Awake()
     {
-        
+       
+        instance = this;
+
     }
 
     // Update is called once per frame
@@ -24,12 +38,12 @@ public class DrawTrajectory : MonoBehaviour
 
         float FlightDuration = (2 * velocity.y) / Physics.gravity.y;
 
-        float stepTime = FlightDuration / _lineSegmentCount;
+        float stepTime = FlightDuration / lineSegmentCount;
 
-        _lineSegmentCount Clear();
+        linePoints.Clear();
+        linePoints.Add(staringPoint);
 
-
-            for(int i = 0; 1 _linePoint)
+            for(int i = 1; i < lineSegmentCount; i++)
         {
             float stepTimePassed = stepTime * i;
 
@@ -40,19 +54,27 @@ public class DrawTrajectory : MonoBehaviour
                                             );
 
             RaycastHit hit;
-
-            if(Physics.Raycast(origin:staringPoint, direction:-MovementVector, out hit, MovementVector.magnitude))
+            Vector3 NewPointOnLine = -MovementVector + staringPoint;
+            if (Physics.Raycast(origin:linePoints[i-1], direction:NewPointOnLine- linePoints[i - 1], out hit, (NewPointOnLine-linePoints[i-1]).magnitude))
             {
+                linePoints.Add(hit.point);
                 break;
             }
 
-            _linePoints.Add(item: -MovementVector + staringPoint);
+            Debug.DrawLine(start: linePoints[i - 1], end: NewPointOnLine, Color.magenta, duration: 0.0f, depthTest: true);
+          
+            linePoints.Add(NewPointOnLine);
         }
 
+         
+        lineRenderer.positionCount = linePoints.Count;
+        lineRenderer.SetPositions(linePoints.ToArray());
 
-        _lineRenderer.positionCount = _linePoints.Count;
-        _lineRenderer.SetPositions(_linePoints.ToArry());
 
+    }
 
+    public void HideLine()
+    {
+        lineRenderer.positionCount = 0;
     }
 }
