@@ -10,8 +10,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
 
 
-    //Bol inWall
-    private bool inWall;
+    //Ball inWall
+    private bool isWall;
+
+    //Ball in Shot
+    private bool isShot;
+
+
+    private Vector3 inputPressDownPos;
+    private Vector3 inputReleasePos;
 
     // Start is called before the first frame update
 
@@ -26,7 +33,27 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+    private void OnMouseDown()
+    {
+        inputPressDownPos = Input.mousePosition;
+    }
 
+    private void OnMouseUp()
+    {
+        inputReleasePos = Input.mousePosition;
+        ShootPlayer(force: inputReleasePos - inputPressDownPos);
+    }
+
+
+
+
+    void ShootPlayer(Vector3 force)
+    {
+        if (isShot) return;
+        if (!isWall) return;
+
+        playerRb.AddForce(new Vector3(force.x, force.y, force.y) * 2);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -34,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall")
         {
-            inWall = true;
+            isWall = true;
             playerRb.drag = 30;
         }
     }
@@ -44,7 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            inWall = false;
+            isWall = false;
             playerRb.drag = 0;
         }
     }
