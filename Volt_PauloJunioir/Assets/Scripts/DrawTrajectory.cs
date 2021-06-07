@@ -12,8 +12,13 @@ public class DrawTrajectory : MonoBehaviour
 
 
     [SerializeField]
-    [Range(3, 300)]
-    private int lineSegmentCount = 300;
+    [Range(3, 100)]
+    private int lineSegmentCount = 20;
+
+    [SerializeField]
+    [Range(10, 100)]
+    private int showPercentage = 50;
+    private int linePointCount;
 
     private List<Vector3> linePoints = new List<Vector3>();
 
@@ -21,6 +26,7 @@ public class DrawTrajectory : MonoBehaviour
     {
        
         instance = this;
+        linePointCount = (int)(lineSegmentCount * (showPercentage / 100f));
 
     }
 
@@ -38,20 +44,25 @@ public class DrawTrajectory : MonoBehaviour
 
         float FlightDuration = (2 * velocity.y) / Physics.gravity.y;
 
+       
+
         float stepTime = FlightDuration / lineSegmentCount;
 
         linePoints.Clear();
         linePoints.Add(staringPoint);
 
-            for(int i = 1; i < lineSegmentCount; i++)
+            //for (int i = 1; i < lineSegmentCount; i++)
+            for (int i = 1; i < linePointCount; i++)
         {
             float stepTimePassed = stepTime * i;
 
             Vector3 MovementVector = new Vector3(
                                             x: velocity.x * stepTimePassed,
-                                            y: velocity.y * stepTimePassed - 0.5f * Physics.gravity.y * stepTime * stepTimePassed,
+                                            y: velocity.y * stepTimePassed - 0.5f * Physics.gravity.y * stepTimePassed * stepTimePassed,
                                             z: velocity.z * stepTimePassed
                                             );
+
+           
 
             RaycastHit hit;
             Vector3 NewPointOnLine = -MovementVector + staringPoint;

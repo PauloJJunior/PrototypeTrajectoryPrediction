@@ -10,39 +10,81 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
 
 
-    //Ball inWall
+    //Player inWall
     private bool isWall;
 
-    //Ball in Shot
-    private bool isShot;
 
+    public string GameControllerTag = "GameController";
 
     private Vector3 inputPressDownPos;
     private Vector3 inputReleasePos;
-    private float forceMultiplier = 0.3f;
+
+    private float startLife;
+
+    public float Life { get; set; }
+
+
     // Start is called before the first frame update
+
+
+    public PlayerScriptable PlayerPresets;
+
+    private GameController gameController;
 
     void Start()
     {
         //Sign RB PLAYER
         playerRb = GetComponent<Rigidbody>();
+
+        startLife = PlayerPresets.Life;
+        Life = PlayerPresets.Life;
+
+        gameController = GameObject.FindGameObjectWithTag(GameControllerTag).transform.GetComponent<GameController>();
+
+        StartCoroutine("LifeTimeController");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
+        CheckGameOver();
+    }
+
+
+    void CheckGameOver()
+    {
+
+        if(Life <= 0)
+        {
+            gameController.GameOver();
+            return;
+        }
+
+        if (transform.position.y < -5f)
+        {
+            gameController.GameOver();
+            return;
+        }
+
     }
 
     private void OnMouseDrag()
     {
-        Vector3 forceInit = (Input.mousePosition-inputPressDownPos);
-        Vector3 forceV = (new Vector3(forceInit.x, forceInit.y, z:forceInit.y)) * forceMultiplier;
+        if (Input.mousePosition.y < inputPressDownPos.y)
+        {
+            Vector3 forceInit = (Input.mousePosition - inputPressDownPos);
+            Vector3 forceV = (new Vector3(forceInit.x, forceInit.y, z: forceInit.y)) * PlayerPresets.ForceMultiplier;
 
-        //if (isShot) return;
-       // if (!isWall) return;
 
-        DrawTrajectory.instance.UpdateTrajectory(forceVector:forceV, playerRb, staringPoint: transform.position);
+            if (!isWall) return;
+
+            DrawTrajectory.instance.UpdateTrajectory(forceV, playerRb, staringPoint: transform.position);
+        }
+        else DrawTrajectory.instance.HideLine();
+
+
 
     }
     private void OnMouseDown()
@@ -54,8 +96,11 @@ public class PlayerController : MonoBehaviour
     {
         
         inputReleasePos = Input.mousePosition;
-        ShootPlayer(force: inputReleasePos - inputPressDownPos);
-        
+
+        if (inputReleasePos.y < inputPressDownPos.y)
+        {
+            ShootPlayer(inputPressDownPos - inputReleasePos);
+        }
     }
 
 
@@ -63,12 +108,23 @@ public class PlayerController : MonoBehaviour
 
     void ShootPlayer(Vector3 force)
     {
-        if (isShot) return;
+      
         if (!isWall) return;
 
-        //DrawTrajectory.instance.HideLine();
-        playerRb.AddForce(new Vector3(force.x, force.y, force.y) * forceMultiplier);
-       // isShot = true;
+        DrawTrajectory.instance.HideLine();
+        playerRb.drag = 0;
+        playerRb.AddForce(new Vector3(force.x, force.y, force.y) * PlayerPresets.ForceMultiplier);
+       
+    }
+
+    IEnumerator LifeTimeController()
+    {
+
+        yield return new WaitForSeconds(PlayerPresets.LifeSeconds);
+        if (gameController.CurrentGameState == GameState.GAMEPLAY)
+            Life--;
+
+        StartCoroutine("LifeTimeController");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -78,7 +134,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             isWall = true;
-            playerRb.drag = 0;
+            playerRb.drag = PlayerPresets.Drag;
         }
     }
 
@@ -90,6 +146,27 @@ public class PlayerController : MonoBehaviour
             isWall = false;
             playerRb.drag = 0;
         }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if(other.tag == "Collectable")
+        {
+            CollectablesScriptable coll = other.GetComponent<Collectable>().Collected();
+
+            if(coll.Type == TypeCollectable.LIFE)
+            {
+                print("Coletou VIDA");
+                Life += coll.LifeRestoure;
+            }
+            else if (coll.Type == TypeCollectable.COIN)
+            {
+                gameController.Coin += coll.Coins;
+            }
+        }
+        
     }
 
 }

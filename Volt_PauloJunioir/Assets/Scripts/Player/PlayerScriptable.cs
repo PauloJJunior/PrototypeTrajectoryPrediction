@@ -10,7 +10,14 @@ public class PlayerScriptable : ScriptableObject
     public string Name;
 
     //Player Drag
-    public string Drag;
+    public float Drag;
 
+    //Force Multiplier
+    public float ForceMultiplier;
 
+    // Life for seconds
+    public float LifeSeconds;
+
+    // Life for seconds
+    public float Life;
 }
