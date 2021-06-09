@@ -11,7 +11,12 @@ public class SFXController : MonoBehaviour
 
     public string SFXTag = "SFX";
 
-   
+
+    public AudioClip gameOverClip;
+
+    public AudioClip winClip;
+
+
 
     private void Awake()
     {
@@ -50,4 +55,32 @@ public class SFXController : MonoBehaviour
     {
         audioSource.PlayOneShot(clip, volume);
     }
+
+
+
+    public void PlayClipLoop(AudioClip clip, bool stop)
+    {
+
+        if (!stop && !Audio.isPlaying)
+        {
+        
+            Audio.clip = clip;
+            Audio.loop = true;
+            Audio.Play();
+        }
+        else if (stop && Audio.isPlaying)
+        {
+            if(Audio.clip == clip)
+            {
+                Audio.loop = false;
+                Audio.Stop();
+            }
+        }
+
+
+    }
+
+
+
+
 }

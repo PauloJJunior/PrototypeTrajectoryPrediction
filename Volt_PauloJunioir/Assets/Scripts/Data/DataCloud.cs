@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class DataCloud
 {
     //Last score
@@ -11,6 +13,9 @@ public class DataCloud
     //Current Level
     public int currentLevel = 1;
 
+    //Player Level
+    public int playerMaxLevel = 1;
+
 
     //Total of game played
     public int rounds;
@@ -20,4 +25,6 @@ public class DataCloud
 
     //Total Max Level
     public int maxLevel = 4;
+
+ 
 }

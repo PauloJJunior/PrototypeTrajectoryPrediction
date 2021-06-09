@@ -24,7 +24,6 @@ public class Collectable : MonoBehaviour
     {
 
 
-
         Destroy(this.gameObject);
         return CollectablePresets;
     }

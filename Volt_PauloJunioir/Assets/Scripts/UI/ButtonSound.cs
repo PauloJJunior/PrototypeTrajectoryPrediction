@@ -18,6 +18,9 @@ public class ButtonSound : MonoBehaviour
     [SerializeField]
     private soundObjectName soundTarget;
 
+    [SerializeField]
+    private AudioClip btnAudioClip;
+
 
     [SerializeField]
     private Sprite[] sptButtons;
@@ -125,7 +128,9 @@ public class ButtonSound : MonoBehaviour
     public void ToggleSound()
     {
         currentState = 1 - currentState;
-
+       
         SetSound();
+        if(btnAudioClip)
+        SFXController.instance.PlayClip(btnAudioClip);
     }
 }

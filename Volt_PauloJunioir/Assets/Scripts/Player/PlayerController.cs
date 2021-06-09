@@ -37,7 +37,11 @@ public class PlayerController : MonoBehaviour
 
     public TypeWall NextWall = TypeWall.ALL;
 
-   
+    public float PositionDie = -5f;
+
+    private ParticleSystem jumpEffects;
+
+    private ParticleSystemRenderer jumpEffectsRenderer;
 
     void Start()
     {
@@ -58,6 +62,13 @@ public class PlayerController : MonoBehaviour
      
 
         this.gameObject.transform.GetChild(0).GetComponent<BoxCollider>().material = null;
+
+        GameObject effect = Instantiate(PlayerPresets.JumpEffect, this.transform.position, Quaternion.identity);
+        effect.transform.parent = this.gameObject.transform;
+        jumpEffects = effect.GetComponent<ParticleSystem>();
+        jumpEffectsRenderer = effect.GetComponent<ParticleSystemRenderer>();
+        jumpEffects.Stop();
+        jumpEffectsRenderer.material.color = ColorPlayer;
 
     }
 
@@ -80,7 +91,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (transform.position.y < -5f)
+        if (transform.position.y < PositionDie)
         {
             gameController.GameOver();
             return;
@@ -92,6 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.mousePosition.y < inputPressDownPos.y)
         {
+            
             Vector3 forceInit = (Input.mousePosition - inputPressDownPos);
             Vector3 forceV = (new Vector3(forceInit.x, forceInit.y, z: forceInit.y)) * PlayerPresets.ForceMultiplier;
 
@@ -99,6 +111,9 @@ public class PlayerController : MonoBehaviour
             if (!isWall) return;
 
             DrawTrajectory.instance.UpdateTrajectory(forceV, playerRb, staringPoint: transform.position);
+            jumpEffectsRenderer.material.color = ColorPlayer;
+            jumpEffects.Play();
+            SFXController.instance.PlayClipLoop(PlayerPresets.DragClip, false);
         }
         else DrawTrajectory.instance.HideLine();
 
@@ -108,11 +123,13 @@ public class PlayerController : MonoBehaviour
     private void OnMouseDown()
     {
         inputPressDownPos = Input.mousePosition;
+       
     }
 
     private void OnMouseUp()
     {
-        
+        SFXController.instance.PlayClipLoop(PlayerPresets.DragClip, true);
+        jumpEffects.Stop();
         inputReleasePos = Input.mousePosition;
 
         if (inputReleasePos.y < inputPressDownPos.y)
@@ -129,6 +146,7 @@ public class PlayerController : MonoBehaviour
       
         if (!isWall) return;
 
+        SFXController.instance.PlayClip(PlayerPresets.JumpClip);
         DrawTrajectory.instance.HideLine();
         playerRb.drag = 0;
         playerRb.AddForce(new Vector3(force.x, force.y, force.y) * PlayerPresets.ForceMultiplier);
@@ -173,6 +191,10 @@ public class PlayerController : MonoBehaviour
                 RenderPlayer.material.SetColor("_EmissionColor", wall.NextMaterial.GetColor("_EmissionColor"));
 
             }
+            else
+            {
+                SFXController.instance.PlayClip(PlayerPresets.HitClip);
+            }
 
 
         }
@@ -187,9 +209,14 @@ public class PlayerController : MonoBehaviour
         {
             if (playerRb.velocity.y == 0)
             {
-                gameController.CurrentGameState = GameState.WIN;
+                gameController.Win();
             }
 
+        }
+        else if (collision.gameObject.tag == "Trampoline")
+        {
+
+            SFXController.instance.PlayClip(PlayerPresets.HitClip);
         }
 
 
@@ -225,11 +252,13 @@ public class PlayerController : MonoBehaviour
                 Life += coll.LifeRestoure;
                 ColorPlayer.a = Life / startLife;
                 RenderPlayer.material.color = ColorPlayer;
+                SFXController.instance.PlayClip(coll.CollectClip);
             }
             else if (coll.Type == TypeCollectable.COIN)
             {
                 print("Coletou COIN");
                 gameController.Coin += coll.Coins;
+                SFXController.instance.PlayClip(coll.CollectClip);
             }
         }
         

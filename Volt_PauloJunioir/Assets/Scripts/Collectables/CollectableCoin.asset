@@ -15,3 +15,4 @@ MonoBehaviour:
   Type: 1
   LifeRestoure: 0
   Coins: 1
+  CollectClip: {fileID: 8300000, guid: 62d7a250a2d21934c9f56385f4ae5e8d, type: 3}

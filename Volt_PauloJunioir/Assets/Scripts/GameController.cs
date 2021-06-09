@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class GameController : MonoBehaviour
 
     private UIController uiController;
 
+    private int nextSceneLoad;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,9 @@ public class GameController : MonoBehaviour
         playerController = GameObject.FindGameObjectWithTag("Player").transform.GetComponent<PlayerController>();
 
         uiController = GameObject.FindGameObjectWithTag(UiControllerTag).transform.GetComponent<UIController>();
+
+
+        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     // Update is called once per frame
@@ -68,8 +74,67 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        CurrentGameState = GameState.GAMEOVER;
-        
+        if (CurrentGameState != GameState.GAMEOVER){
+            CurrentGameState = GameState.GAMEOVER;
+            SFXController.instance.PlayClip(SFXController.instance.gameOverClip);
+            uiController.GameOverObj.SetActive(true);
+        }
+       
 
+
+
+    }
+
+
+    public void Win()
+    {
+        if (CurrentGameState != GameState.WIN)
+        {
+            CurrentGameState = GameState.WIN;
+
+            SFXController.instance.PlayClip(SFXController.instance.winClip);
+            uiController.WinObj.SetActive(true);
+        }
+      
+    }
+
+
+    public void Pause()
+    {
+        if(CurrentGameState != GameState.PAUSE)
+        {
+            CurrentGameState = GameState.PAUSE;
+            //Set timescale to 0, preventing anything from moving
+            Time.timeScale = 0;
+        }
+        else
+        {
+            CurrentGameState = GameState.GAMEPLAY;
+            //Set timescale to 0, preventing anything from moving
+            Time.timeScale = 1;
+        }
+       
+
+    }
+
+    public void NextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == DataStorage.playerData.maxLevel)
+        {
+            Debug.Log("FinishGame");
+
+            uiController.FinishObj.SetActive(true);
+
+        }
+        else
+        {
+
+            if (nextSceneLoad > DataStorage.playerData.currentLevel)
+            {
+                DataStorage.playerData.currentLevel = nextSceneLoad;
+            }
+
+            SceneManager.LoadScene(nextSceneLoad);
+        }
     }
 }

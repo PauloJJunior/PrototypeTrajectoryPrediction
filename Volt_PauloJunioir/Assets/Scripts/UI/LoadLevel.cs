@@ -12,4 +12,9 @@ public class LoadLevel : MonoBehaviour
         SceneManager.LoadScene(levelName);
 
     }
+
+    public void LoadCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

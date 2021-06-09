@@ -13,6 +13,10 @@ public class CameraFollow : MonoBehaviour
 
     public string TagPlayer = "Player";
 
+    public string GameControllerTag = "GameController";
+
+    private GameController gameController;
+
     private Transform target;
 
 
@@ -20,17 +24,24 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag(TagPlayer).transform;
+
+        gameController = GameObject.FindGameObjectWithTag(GameControllerTag).transform.GetComponent<GameController>();
+
         startOffset = Offset;
     }
 
     private void LateUpdate()
     {
-        if (target.position.x > 0) Offset.x = -1.5f;
-        else if (target.position.x < 0) Offset.x = +1.5f;
-        else Offset = startOffset;
+        if(gameController.CurrentGameState != GameState.GAMEOVER)
+        {
+            if (target.position.x > 0) Offset.x = -1.5f;
+            else if (target.position.x < 0) Offset.x = +1.5f;
+            else Offset = startOffset;
 
-        Vector3 desiredPosition = target.position + Offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, SmoothSpeed * Time.deltaTime);
-        transform.position = smoothedPosition;
+            Vector3 desiredPosition = target.position + Offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, SmoothSpeed * Time.deltaTime);
+            transform.position = smoothedPosition;
+        }
+    
     }
 }

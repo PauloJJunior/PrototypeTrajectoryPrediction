@@ -17,4 +17,8 @@ public class CollectablesScriptable : ScriptableObject
     public int Coins;
 
 
+    //Sound Effect Collect
+    public AudioClip CollectClip;
+
+
 }
