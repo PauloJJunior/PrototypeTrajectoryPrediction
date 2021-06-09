@@ -23,9 +23,9 @@ public class Collectable : MonoBehaviour
     public CollectablesScriptable Collected()
     {
 
-      
 
 
+        Destroy(this.gameObject);
         return CollectablePresets;
     }
 }

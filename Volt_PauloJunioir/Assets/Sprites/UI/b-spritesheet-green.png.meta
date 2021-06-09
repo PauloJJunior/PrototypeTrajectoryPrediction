@@ -1,0 +1,774 @@
+fileFormatVersion: 2
+guid: 0ecaa68743c189547a6757f2531d3d84
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1209023284895083946
+    second: b-spritesheet-green_0
+  - first:
+      213: -7611280283252198874
+    second: b-spritesheet-green_1
+  - first:
+      213: -9168990026034695167
+    second: b-spritesheet-green_2
+  - first:
+      213: 4040610386936319896
+    second: b-spritesheet-green_3
+  - first:
+      213: 3284194319048428394
+    second: b-spritesheet-green_4
+  - first:
+      213: 7030034138330759543
+    second: b-spritesheet-green_5
+  - first:
+      213: 2701735596774327535
+    second: b-spritesheet-green_6
+  - first:
+      213: -8953255555046515638
+    second: b-spritesheet-green_7
+  - first:
+      213: -7086341630913039079
+    second: b-spritesheet-green_8
+  - first:
+      213: 4040190965761083572
+    second: b-spritesheet-green_9
+  - first:
+      213: -1866329492340800217
+    second: b-spritesheet-green_10
+  - first:
+      213: 1381756221105699867
+    second: b-spritesheet-green_11
+  - first:
+      213: -6715804021627709352
+    second: b-spritesheet-green_12
+  - first:
+      213: 5754369592178683383
+    second: b-spritesheet-green_13
+  - first:
+      213: -6574968361319738328
+    second: b-spritesheet-green_14
+  - first:
+      213: 8442929887654209425
+    second: b-spritesheet-green_15
+  - first:
+      213: 6077437784830646468
+    second: b-spritesheet-green_16
+  - first:
+      213: 2920678154419562148
+    second: b-spritesheet-green_17
+  - first:
+      213: 9074265747561634133
+    second: b-spritesheet-green_18
+  - first:
+      213: -6074247289258311719
+    second: b-spritesheet-green_19
+  - first:
+      213: -181560582752912603
+    second: b-spritesheet-green_20
+  - first:
+      213: -4734990001619276146
+    second: b-spritesheet-green_21
+  - first:
+      213: -3998631421371826178
+    second: b-spritesheet-green_22
+  - first:
+      213: -7532573677066857284
+    second: b-spritesheet-green_23
+  - first:
+      213: -6423342134381723626
+    second: b-spritesheet-green_24
+  - first:
+      213: -4568056182552723078
+    second: b-spritesheet-green_25
+  - first:
+      213: 1459575561449494883
+    second: b-spritesheet-green_26
+  - first:
+      213: -8797708753910573443
+    second: b-spritesheet-green_27
+  - first:
+      213: 7785379866484203882
+    second: b-spritesheet-green_28
+  - first:
+      213: 595081553987582995
+    second: b-spritesheet-green_29
+  - first:
+      213: -984601407703053305
+    second: b-spritesheet-green_30
+  - first:
+      213: 4011034364421167475
+    second: b-spritesheet-green_31
+  - first:
+      213: 1378835968946923816
+    second: b-spritesheet-green_32
+  - first:
+      213: 3686370661155887720
+    second: b-spritesheet-green_33
+  - first:
+      213: -5667403502876579264
+    second: b-spritesheet-green_34
+  - first:
+      213: -1723479384329974601
+    second: b-spritesheet-green_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: b-spritesheet-green_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2403
+        width: 355
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65217a26abfa83fe0800000000000000
+      internalID: -1209023284895083946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 2403
+        width: 356
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62271de98ec4f5690800000000000000
+      internalID: -7611280283252198874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_2
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 2403
+        width: 356
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1043a15962431c080800000000000000
+      internalID: -9168990026034695167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_3
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 2403
+        width: 356
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fc7152db1231830800000000000000
+      internalID: 4040610386936319896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_4
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 2403
+        width: 356
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bcc30355dc39d20800000000000000
+      internalID: 3284194319048428394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_5
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 2403
+        width: 355
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77103165dc2bf8160800000000000000
+      internalID: 7030034138330759543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1982
+        width: 355
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe403caf53e7e7520800000000000000
+      internalID: 2701735596774327535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_7
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1982
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cd8225285afb380800000000000000
+      internalID: -8953255555046515638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_8
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1982
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915bd5ce4d148ad90800000000000000
+      internalID: -7086341630913039079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_9
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1982
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b88eea0744a11830800000000000000
+      internalID: 4040190965761083572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_10
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1982
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725013707377916e0800000000000000
+      internalID: -1866329492340800217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_11
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 1982
+        width: 355
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cf03556fbfc2310800000000000000
+      internalID: 1381756221105699867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1560
+        width: 355
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8589dbdf2dbacc2a0800000000000000
+      internalID: -6715804021627709352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_13
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1560
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fdae18f7a0abdf40800000000000000
+      internalID: 5754369592178683383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_14
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1560
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824da1e6c1501c4a0800000000000000
+      internalID: -6574968361319738328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_15
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1560
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197682110005b2570800000000000000
+      internalID: 8442929887654209425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_16
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1560
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c81e553775675450800000000000000
+      internalID: 6077437784830646468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_17
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 1560
+        width: 355
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6eb699e45588820800000000000000
+      internalID: 2920678154419562148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1139
+        width: 355
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559d7e0be944eed70800000000000000
+      internalID: 9074265747561634133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_19
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1139
+        width: 356
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dff0ede540f3bba0800000000000000
+      internalID: -6074247289258311719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_20
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1139
+        width: 356
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bbcc7ac97fa7df0800000000000000
+      internalID: -181560582752912603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_21
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1139
+        width: 356
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ee47a3eafe94eb0800000000000000
+      internalID: -4734990001619276146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_22
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1139
+        width: 356
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effba6d68e10288c0800000000000000
+      internalID: -3998631421371826178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_23
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 1139
+        width: 355
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4d8f5662ce67790800000000000000
+      internalID: -7532573677066857284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_34
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 295
+        width: 356
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04aac349a865951b0800000000000000
+      internalID: -5667403502876579264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b-spritesheet-green_35
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 297
+        width: 721
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc8d4f91a8f418e0800000000000000
+      internalID: -1723479384329974601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0599dc65c2468424c8c86516ac4ed108
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

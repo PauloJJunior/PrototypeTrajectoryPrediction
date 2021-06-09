@@ -31,6 +31,14 @@ public class PlayerController : MonoBehaviour
 
     private GameController gameController;
 
+    public Color ColorPlayer;
+
+    public Renderer RenderPlayer { get; set; }
+
+    public TypeWall NextWall = TypeWall.ALL;
+
+   
+
     void Start()
     {
         //Sign RB PLAYER
@@ -43,12 +51,22 @@ public class PlayerController : MonoBehaviour
 
         StartCoroutine("LifeTimeController");
 
+        RenderPlayer = this.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+
+        ColorPlayer = RenderPlayer.material.color;
+
+     
+
+        this.gameObject.transform.GetChild(0).GetComponent<BoxCollider>().material = null;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
+
+        
         CheckGameOver();
     }
 
@@ -122,8 +140,13 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(PlayerPresets.LifeSeconds);
         if (gameController.CurrentGameState == GameState.GAMEPLAY)
+        {
             Life--;
-
+            ColorPlayer.a = Life / startLife;
+            RenderPlayer.material.color = ColorPlayer;
+            gameController.PlayerColor = ColorPlayer;
+        }
+   
         StartCoroutine("LifeTimeController");
     }
 
@@ -133,9 +156,43 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall")
         {
+            Wall wall = collision.gameObject.GetComponent<Wall>();
+
+
+            if (NextWall == wall.TypeCurrentWall || NextWall == TypeWall.ALL)
+            {
+                NextWall = wall.NextWall;
+                isWall = true;
+                playerRb.drag = PlayerPresets.Drag;
+
+                ColorPlayer.r = wall.NextMaterial.color.r;
+                ColorPlayer.g = wall.NextMaterial.color.g;
+                ColorPlayer.b = wall.NextMaterial.color.b;
+                RenderPlayer.material.color = ColorPlayer;
+                RenderPlayer.material.SetColor("_EmissionColor", wall.NextMaterial.GetColor("_EmissionColor"));
+                RenderPlayer.material.SetColor("_EmissionColor", wall.NextMaterial.GetColor("_EmissionColor"));
+
+            }
+
+
+        }
+        else if (collision.gameObject.tag == "Start")
+        {
+
             isWall = true;
             playerRb.drag = PlayerPresets.Drag;
+
+
+        } else if (collision.gameObject.tag == "Finish")
+        {
+            if (playerRb.velocity.y == 0)
+            {
+                gameController.CurrentGameState = GameState.WIN;
+            }
+
         }
+
+
     }
 
 
@@ -146,6 +203,12 @@ public class PlayerController : MonoBehaviour
             isWall = false;
             playerRb.drag = 0;
         }
+        else if (collision.gameObject.tag == "Wall")
+        {
+            isWall = false;
+            playerRb.drag = 0;
+        }
+      
     }
 
 
@@ -158,11 +221,14 @@ public class PlayerController : MonoBehaviour
 
             if(coll.Type == TypeCollectable.LIFE)
             {
-                print("Coletou VIDA");
+                print("Coletou VIDA");               
                 Life += coll.LifeRestoure;
+                ColorPlayer.a = Life / startLife;
+                RenderPlayer.material.color = ColorPlayer;
             }
             else if (coll.Type == TypeCollectable.COIN)
             {
+                print("Coletou COIN");
                 gameController.Coin += coll.Coins;
             }
         }

@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Wall
   - Collectable
+  - Canvas
+  - UIController
+  - Start
+  - SFX
+  - PlaneJump
+  - SFXController
+  - MusicController
   layers:
   - Default
   - TransparentFX

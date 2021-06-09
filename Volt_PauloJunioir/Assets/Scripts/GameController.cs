@@ -8,10 +8,16 @@ public class GameController : MonoBehaviour
 
     public float CurrentTime { get; set; }
 
+    [SerializeField]
+    private string UiControllerTag = "UIController";
 
-    public int Coin { get; set; }
+    private int coin;
+
+    private Color playerColor;
 
     private PlayerController playerController { get; set; }
+
+    private UIController uiController;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +25,8 @@ public class GameController : MonoBehaviour
         CurrentGameState = GameState.GAMEPLAY;
 
         playerController = GameObject.FindGameObjectWithTag("Player").transform.GetComponent<PlayerController>();
+
+        uiController = GameObject.FindGameObjectWithTag(UiControllerTag).transform.GetComponent<UIController>();
     }
 
     // Update is called once per frame
@@ -29,13 +37,39 @@ public class GameController : MonoBehaviour
 
             CurrentTime += Time.deltaTime;
 
-            
+        print(CurrentGameState.ToString());
+    }
+
+    public int Coin {
+
+        get { return coin; }
+
+        set {
+
+            coin = value;
+            uiController.setCoin(coin);
+        }
+    }
+
+
+    public Color PlayerColor
+    {
+
+        get { return playerColor; }
+
+        set
+        {
+          
+            playerColor = value;
+            uiController.setPlayerColor(playerColor);
+        }
     }
 
 
     public void GameOver()
     {
         CurrentGameState = GameState.GAMEOVER;
-        print("Game Over");
+        
+
     }
 }
