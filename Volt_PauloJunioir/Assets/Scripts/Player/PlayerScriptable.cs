@@ -32,4 +32,7 @@ public class PlayerScriptable : ScriptableObject
 
     //Sound Effect Jump
     public AudioClip HitClip;
+
+    //Color No Life
+    public Color noLifeCenterMaterial;
 }

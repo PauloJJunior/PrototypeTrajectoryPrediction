@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
         if (CurrentGameState == GameState.WAIT)
 
 
-            CurrentTime += Time.deltaTime;
+          
 
         print(CurrentGameState.ToString());
     }
@@ -68,8 +68,10 @@ public class GameController : MonoBehaviour
           
             playerColor = value;
             uiController.setPlayerColor(playerColor);
+
         }
     }
+
 
 
     public void GameOver()

@@ -43,6 +43,11 @@ public class PlayerController : MonoBehaviour
 
     private ParticleSystemRenderer jumpEffectsRenderer;
 
+    private bool noLife;
+    
+
+    private Color startCenterMaterial;
+
     void Start()
     {
         //Sign RB PLAYER
@@ -70,6 +75,10 @@ public class PlayerController : MonoBehaviour
         jumpEffects.Stop();
         jumpEffectsRenderer.material.color = ColorPlayer;
 
+
+        startCenterMaterial = this.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color;
+
+
     }
 
     // Update is called once per frame
@@ -85,11 +94,25 @@ public class PlayerController : MonoBehaviour
     void CheckGameOver()
     {
 
-        if(Life <= 0)
+        if (Life <= 0 ) {
+
+            if (!noLife)
+            {
+                noLife = true;
+                this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = PlayerPresets.noLifeCenterMaterial;
+            }
+               
+        } 
+        else
         {
-            gameController.GameOver();
-            return;
-        }
+            if (noLife)
+            {
+                noLife = false;
+                this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = startCenterMaterial;
+            }
+              }
+            
+
 
         if (transform.position.y < PositionDie)
         {
@@ -179,16 +202,20 @@ public class PlayerController : MonoBehaviour
 
             if (NextWall == wall.TypeCurrentWall || NextWall == TypeWall.ALL)
             {
-                NextWall = wall.NextWall;
-                isWall = true;
-                playerRb.drag = PlayerPresets.Drag;
+                if (!noLife)
+                {
+                    NextWall = wall.NextWall;
+                    isWall = true;
+                    playerRb.drag = PlayerPresets.Drag;
 
-                ColorPlayer.r = wall.NextMaterial.color.r;
-                ColorPlayer.g = wall.NextMaterial.color.g;
-                ColorPlayer.b = wall.NextMaterial.color.b;
-                RenderPlayer.material.color = ColorPlayer;
-                RenderPlayer.material.SetColor("_EmissionColor", wall.NextMaterial.GetColor("_EmissionColor"));
-                RenderPlayer.material.SetColor("_EmissionColor", wall.NextMaterial.GetColor("_EmissionColor"));
+                    ColorPlayer.r = wall.NextMaterial.color.r;
+                    ColorPlayer.g = wall.NextMaterial.color.g;
+                    ColorPlayer.b = wall.NextMaterial.color.b;
+                    RenderPlayer.material.color = ColorPlayer;
+                    RenderPlayer.material.SetColor("_EmissionColor", wall.NextMaterial.GetColor("_EmissionColor"));
+                    RenderPlayer.material.SetColor("_EmissionColor", wall.NextMaterial.GetColor("_EmissionColor"));
+                }
+             
 
             }
             else
