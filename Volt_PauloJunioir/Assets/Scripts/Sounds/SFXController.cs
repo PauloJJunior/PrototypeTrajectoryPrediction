@@ -16,6 +16,8 @@ public class SFXController : MonoBehaviour
 
     public AudioClip winClip;
 
+    public AudioClip transitionClip;
+
 
 
     private void Awake()
@@ -32,8 +34,9 @@ public class SFXController : MonoBehaviour
 
         instance = this;
 
+        if(SFXTag != null)
         Audio = GameObject.FindGameObjectWithTag(SFXTag).transform.GetComponent<AudioSource>();
-
+       
 
     }
 

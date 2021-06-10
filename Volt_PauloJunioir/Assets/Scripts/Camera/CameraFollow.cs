@@ -13,6 +13,8 @@ public class CameraFollow : MonoBehaviour
 
     public string TagPlayer = "Player";
 
+    public string TagFinish = "Finish";
+
     public string GameControllerTag = "GameController";
 
     private GameController gameController;
@@ -24,6 +26,9 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag(TagPlayer).transform;
+
+     
+        this.transform.position = GameObject.FindGameObjectWithTag(TagFinish).transform.position;
 
         gameController = GameObject.FindGameObjectWithTag(GameControllerTag).transform.GetComponent<GameController>();
 

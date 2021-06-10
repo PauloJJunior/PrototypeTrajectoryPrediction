@@ -18,8 +18,6 @@ public class ButtonSound : MonoBehaviour
     [SerializeField]
     private soundObjectName soundTarget;
 
-    [SerializeField]
-    private AudioClip btnAudioClip;
 
 
     [SerializeField]
@@ -130,7 +128,7 @@ public class ButtonSound : MonoBehaviour
         currentState = 1 - currentState;
        
         SetSound();
-        if(btnAudioClip)
-        SFXController.instance.PlayClip(btnAudioClip);
+    
+        SFXController.instance.PlayClip(SFXController.instance.transitionClip);
     }
 }

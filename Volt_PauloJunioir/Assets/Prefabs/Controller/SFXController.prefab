@@ -47,3 +47,4 @@ MonoBehaviour:
   SFXTag: SFX
   gameOverClip: {fileID: 8300000, guid: bc1a4b0ac719adb41a87164545816c62, type: 3}
   winClip: {fileID: 8300000, guid: e18800b470bd7144f9cdbbc04cd748bd, type: 3}
+  transitionClip: {fileID: 8300000, guid: 43a4468e5d9ff92418eb2674746175bf, type: 3}

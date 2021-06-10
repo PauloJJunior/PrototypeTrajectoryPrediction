@@ -18,11 +18,6 @@ public class UIController : MonoBehaviour
 
     private GameController gameController;
 
-    [SerializeField]
-    private Sprite[] sptButtonPause;
-
-    [SerializeField]
-    private Button buttonPause;
 
     [SerializeField]
     private TextMeshProUGUI textCoinGameOver;
@@ -35,6 +30,8 @@ public class UIController : MonoBehaviour
     public GameObject WinObj;
 
     public GameObject FinishObj;
+
+    public GameObject PauseObj;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +62,19 @@ public class UIController : MonoBehaviour
     }
 
 
+    public void GameOver(int coins)
+    {
+        GameOverObj.SetActive(true);
+        textCoinGameOver.text = coins.ToString("D2");
+    }
+
+    public void Win(int coins)
+    {
+        WinObj.SetActive(true);
+        textCoinWin.text = coins.ToString("D2");
+    }
+
+
     public void PauseGame()
     {
 
@@ -72,17 +82,11 @@ public class UIController : MonoBehaviour
 
         if(gameController.CurrentGameState == GameState.GAMEPLAY)
         {
-            buttonPause.image.sprite = sptButtonPause[0];
-            SpriteState ss = buttonPause.spriteState;
-            ss.pressedSprite = sptButtonPause[1];
-            buttonPause.spriteState = ss;
+            PauseObj.SetActive(false);
         }
         else
         {
-            buttonPause.image.sprite = sptButtonPause[2];
-            SpriteState ss = buttonPause.spriteState;
-            ss.pressedSprite = sptButtonPause[3];
-            buttonPause.spriteState = ss;
+            PauseObj.SetActive(true);
         }
 
     }

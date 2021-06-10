@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 0}
   lineSegmentCount: 40
-  showPercentage: 100
+  showPercentage: 80
 --- !u!1 &5758594317017746958
 GameObject:
   m_ObjectHideFlags: 0

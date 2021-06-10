@@ -1,1 +1,1 @@
-{"lastScore":0,"coins":0,"currentLevel":1,"playerMaxLevel":1,"rounds":0,"currentCharacter":0,"maxLevel":4}
+{"coins":4,"currentLevel":3,"playerMaxLevel":1,"currentCharacter":0,"maxLevel":1}

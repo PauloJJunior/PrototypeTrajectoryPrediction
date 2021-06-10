@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class DataCloud
 {
-    //Last score
-    public int lastScore;
 
 
     //Total of Coins
@@ -17,14 +15,11 @@ public class DataCloud
     public int playerMaxLevel = 1;
 
 
-    //Total of game played
-    public int rounds;
-
     //Date Character selection
     public int currentCharacter;
 
     //Total Max Level
-    public int maxLevel = 4;
+    public int maxLevel = 1;
 
  
 }

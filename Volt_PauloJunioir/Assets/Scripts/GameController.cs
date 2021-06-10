@@ -38,12 +38,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CurrentGameState == GameState.WAIT)
-
-
-          
-
-        print(CurrentGameState.ToString());
+        
     }
 
     public int Coin {
@@ -54,6 +49,7 @@ public class GameController : MonoBehaviour
 
             coin = value;
             uiController.setCoin(coin);
+            DataStorage.playerData.coins += value;
         }
     }
 
@@ -79,7 +75,8 @@ public class GameController : MonoBehaviour
         if (CurrentGameState != GameState.GAMEOVER){
             CurrentGameState = GameState.GAMEOVER;
             SFXController.instance.PlayClip(SFXController.instance.gameOverClip);
-            uiController.GameOverObj.SetActive(true);
+            uiController.GameOver(Coin);
+            
         }
        
 
@@ -93,9 +90,9 @@ public class GameController : MonoBehaviour
         if (CurrentGameState != GameState.WIN)
         {
             CurrentGameState = GameState.WIN;
-
             SFXController.instance.PlayClip(SFXController.instance.winClip);
-            uiController.WinObj.SetActive(true);
+            uiController.Win(Coin);
+            
         }
       
     }
@@ -121,6 +118,7 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
+      
         if (SceneManager.GetActiveScene().buildIndex == DataStorage.playerData.maxLevel)
         {
             Debug.Log("FinishGame");

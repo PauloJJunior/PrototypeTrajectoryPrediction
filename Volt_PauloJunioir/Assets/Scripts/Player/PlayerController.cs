@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (Input.mousePosition.y < inputPressDownPos.y)
+        if (Input.mousePosition.y < inputPressDownPos.y && gameController.CurrentGameState == GameState.GAMEPLAY)
         {
             
             Vector3 forceInit = (Input.mousePosition - inputPressDownPos);
@@ -145,6 +145,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if(gameController.CurrentGameState == GameState.GAMEPLAY)
         inputPressDownPos = Input.mousePosition;
        
     }
@@ -155,7 +156,7 @@ public class PlayerController : MonoBehaviour
         jumpEffects.Stop();
         inputReleasePos = Input.mousePosition;
 
-        if (inputReleasePos.y < inputPressDownPos.y)
+        if (inputReleasePos.y < inputPressDownPos.y && gameController.CurrentGameState == GameState.GAMEPLAY)
         {
             ShootPlayer(inputPressDownPos - inputReleasePos);
         }

@@ -8,13 +8,16 @@ public class LoadLevel : MonoBehaviour
 
     public void LoadSceneLevel(string levelName)
     {
-
+        SFXController.instance.PlayClip(SFXController.instance.transitionClip);
         SceneManager.LoadScene(levelName);
+        
 
     }
 
     public void LoadCurrentScene()
     {
+        SFXController.instance.PlayClip(SFXController.instance.transitionClip);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 }

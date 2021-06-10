@@ -110,5 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeCurrentWall: 1
   NextWall: 0
-  Materials: []
+  Materials:
+  - {fileID: 2100000, guid: f2722826e1c1b5c4f90af2278748160b, type: 2}
+  - {fileID: 2100000, guid: 65bfc04202afc724c9a736bd0ff053d2, type: 2}
+  - {fileID: 2100000, guid: 5714f9d5efcb6f64cbb5383904200ffd, type: 2}
   NextMaterial: {fileID: 0}

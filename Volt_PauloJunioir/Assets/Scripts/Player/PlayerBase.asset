@@ -16,7 +16,7 @@ MonoBehaviour:
   Drag: 30
   ForceMultiplier: 3
   LifeSeconds: 1
-  Life: 10
+  Life: 50
   JumpEffect: {fileID: 7568713518026130764, guid: e82f3be4e13c46d4782db6769238d8f0,
     type: 3}
   DragClip: {fileID: 8300000, guid: 9b7b58136415b7c40ab94ded384aafc0, type: 3}
