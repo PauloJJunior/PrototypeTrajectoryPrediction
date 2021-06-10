@@ -5,17 +5,21 @@ using UnityEngine;
 public class SFXController : MonoBehaviour
 {
 
+    // Declare a static instance
     public static SFXController instance;
 
     public AudioSource Audio;
 
+    // Tag SFX
     public string SFXTag = "SFX";
 
-
+    //Clip GameOver
     public AudioClip gameOverClip;
 
+    //Clip Win
     public AudioClip winClip;
 
+    //Clip Button Transition
     public AudioClip transitionClip;
 
 
@@ -23,7 +27,7 @@ public class SFXController : MonoBehaviour
     private void Awake()
     {
 
-
+        // Tests if the class has already been instantiated
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -31,29 +35,34 @@ public class SFXController : MonoBehaviour
 
         }
 
-
         instance = this;
 
-        if(SFXTag != null)
+
+        //Search for audio source responsible for SFX
+        if (SFXTag != null)
         Audio = GameObject.FindGameObjectWithTag(SFXTag).transform.GetComponent<AudioSource>();
        
 
     }
 
 
-
+    //Play Audio Clip
     public void PlayClip(AudioClip clip)
     {
         Audio.PlayOneShot(clip);
     }
 
 
+
+    //Play Audio Clip plus volume
     public void PlayClip(AudioClip clip, float volume)
     {
         Audio.PlayOneShot(clip, volume);
     }
 
 
+
+    //Play Audio Clip plus volume and audioSource
     public void PlayClip(AudioClip clip, float volume, AudioSource audioSource)
     {
         audioSource.PlayOneShot(clip, volume);
@@ -61,6 +70,7 @@ public class SFXController : MonoBehaviour
 
 
 
+    //Play Audio in loop or stoop loop
     public void PlayClipLoop(AudioClip clip, bool stop)
     {
 

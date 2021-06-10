@@ -1,1 +1,1 @@
-{"coins":4,"currentLevel":3,"playerMaxLevel":1,"currentCharacter":0,"maxLevel":1}
+{"coins":4,"currentLevel":3,"playerMaxLevel":1,"maxLevel":1}

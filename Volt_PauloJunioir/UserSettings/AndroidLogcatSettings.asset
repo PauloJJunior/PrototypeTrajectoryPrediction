@@ -1,13 +1,104 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "8695f869",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "8695f869",
+        "name": "com.PauloJJunior.Volt_PauloJunioir",
+        "processId": 29768,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 8924,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 13131,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 16090,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 17267,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 19379,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 20211,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 20596,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 22293,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 23386,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 24007,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 25980,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 26890,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 27455,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 28323,
+            "exited": false
+        },
+        {
+            "deviceId": "8695f869",
+            "name": "com.PauloJJunior.Volt_PauloJunioir",
+            "processId": 29768,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +132,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },

@@ -2,27 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class is used on all collectibles.
 public class Collectable : MonoBehaviour
 {
 
-
+    //Creates a CollectablesScriptable variable
     public CollectablesScriptable CollectablePresets;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Return the CollectablesScriptable and destroy the collectable
     public CollectablesScriptable Collected()
     {
-
 
         Destroy(this.gameObject);
         return CollectablePresets;

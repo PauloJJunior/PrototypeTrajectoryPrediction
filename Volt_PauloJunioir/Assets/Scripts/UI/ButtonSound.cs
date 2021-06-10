@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//Class responsible for controlling the game's sound buttons, for SFX and Music.
 public class ButtonSound : MonoBehaviour
 {
 
@@ -13,24 +15,25 @@ public class ButtonSound : MonoBehaviour
     // The index of the current value of the sound
     private float currentState = 1;
 
+    //Typs of Sound Objects
     enum soundObjectName { SFXController, MusicController};
 
+    //Define Type of sound Object
     [SerializeField]
     private soundObjectName soundTarget;
 
 
-
+    //Sprite Buttons Disble and Enable
     [SerializeField]
     private Sprite[] sptButtons;
 
-
-
-
+    // Current Button
     private Button btn;
 
     private void Awake()
     {
 
+        //Search object based on sound object type
         if (!soundObject && soundTarget.ToString() != string.Empty)
         {
             if (soundTarget.ToString() == "SFXController")
@@ -45,8 +48,9 @@ public class ButtonSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //Sign current Button
         btn = this.gameObject.GetComponent<Button>();
+
 
         // Test to see if the sound is recorded as active or disabled
         if (soundTarget.ToString() == "SFXController") currentState = PlayerPrefs.GetFloat("SFXController", currentState);
@@ -57,17 +61,12 @@ public class ButtonSound : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
     void SetSound()
     {
 
-
+        //Search object based on sound object type if sound objects is empty
         if (!soundObject && soundTarget.ToString() != string.Empty)
         {
             if (soundTarget.ToString() == "SFXController")
@@ -125,10 +124,13 @@ public class ButtonSound : MonoBehaviour
 
     public void ToggleSound()
     {
+        //Change the current Sound value
         currentState = 1 - currentState;
        
+        //Set Current Sound Value
         SetSound();
     
+        // Play Clip Button Transition
         SFXController.instance.PlayClip(SFXController.instance.transitionClip);
     }
 }

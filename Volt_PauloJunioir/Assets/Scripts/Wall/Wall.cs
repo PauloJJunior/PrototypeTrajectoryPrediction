@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Class responsible for controlling the walls.
 public class Wall : MonoBehaviour
 {
 
+    //Variable Current TypeWall
     public TypeWall TypeCurrentWall;
 
+
+    //Variable TypeWall NextWall
     public TypeWall NextWall;
 
+    //Contains all available wall materials in the game.
     public Material[] Materials;
 
+    // Variable NextMaterial
     public Material NextMaterial;
 
 
@@ -19,12 +25,13 @@ public class Wall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Select Material Wall and NextWall in vector
         selectMaterials();
     }
 
 
 
-
+    //Select Material  Wall and NextWall in vector based on the Typewall.
     void selectMaterials()
     {
         switch (TypeCurrentWall)
@@ -59,9 +66,5 @@ public class Wall : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

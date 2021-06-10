@@ -1,9 +1,9 @@
 
 using UnityEngine;
 
+//This class is responsible for storing the data.
 public class DataCloud
 {
-
 
     //Total of Coins
     public int coins;
@@ -15,10 +15,7 @@ public class DataCloud
     public int playerMaxLevel = 1;
 
 
-    //Date Character selection
-    public int currentCharacter;
-
-    //Total Max Level
+    //Total Max Level in the game
     public int maxLevel = 1;
 
  

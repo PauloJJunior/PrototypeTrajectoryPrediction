@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class is responsible for creating the player in the inspector and defining its values.
 [CreateAssetMenu(fileName = "New Player", menuName = "Player")]
 public class PlayerScriptable : ScriptableObject
 {
@@ -33,6 +34,6 @@ public class PlayerScriptable : ScriptableObject
     //Sound Effect Jump
     public AudioClip HitClip;
 
-    //Color No Life
+    //Color No Life Color
     public Color noLifeCenterMaterial;
 }

@@ -1,7 +1,8 @@
 
+
+//Enum responsible for GameStates
 public enum GameState 
 {
-    WAIT,
     GAMEPLAY,
     PAUSE,
     GAMEOVER,
