@@ -1,4 +1,4 @@
-# Game Prototype
+# Game Prototype VOLT
 
 Hello, this is a prototype of a mobile game.
 The current version works for both PC and Android.
@@ -7,11 +7,16 @@ The current version works for both PC and Android.
 
 The files contained in this repository is a complete project for Unity, just open the **Prototype_PauloJunior** folder and follow the guidelines below.
 
+
 ## Guidelines
 
+-  **Biuld PC:**  Just download the **PauloJunior_Volt_PC.zip** file from the project root, extract and run on Windows.
+
+-  **Biuld Android APK:**  Just download the **Paulojjunior_Volt.apk** file from the project root, send to an android or emulator.
+- 
  - The **Unity**  version used in the project is  **2020.3.9f1**.
  -  For better flow and understanding, when loading the project for the first time, please load the scene **Menu**.
- - For better viewing set Aspect to **1920x1080 Portrait**.
+ - For better viewing set Aspect to **1920x1080 Portrait or 1080x1920**.
 
 ## Explanations of Mechanics
 
