@@ -20,8 +20,8 @@ The files contained in this repository is a complete project for Unity, just ope
 
 ## Explanations of Mechanics
 
-- **Movement mechanics:** When the player touches the screen and drags down, it creates a trajectory on the screen showing the direction of the jump, when leaving the touch the player jumps.
--  **Movement mechanics:** When the player touches the screen and drags down, it creates a trajectory on the screen showing the direction of the jump, when leaving the touch the player jumps.
+**Movement mechanics:** When the player touches the screen and drags down, it creates a trajectory on the screen showing the direction of the jump, when leaving the touch the player jumps.
+
 - **Colors:**
  -- The player starts the game with a neutral color, being able to choose the wall he wants to jump.
  -- When the player touches a wall for the first time, it changes its color to indicate which wall he should touch next, if the player touches a wall that is not correct, he will bounce, and may die.
