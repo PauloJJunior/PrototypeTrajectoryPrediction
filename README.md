@@ -1,4 +1,4 @@
-# Game Prototype VOLT
+# Game Prototype
 
 Hello, this is a prototype of a mobile game.
 The current version works for both PC and Android.
@@ -47,5 +47,4 @@ There is only one playable level, a very difficult level to show all the mechani
 
 **Paulo Jorge Junior**
  - **E-mail:** paulojorgejunior@gmail.com
--  https://paulojjunior.com
 
