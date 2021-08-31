@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0031296138, g: 0.0063240584, b: 0.014618333, a: 1}
+  m_IndirectSpecularColor: {r: 0.003188998, g: 0.0065052803, b: 0.014501665, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -189,9 +189,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Nome: Paulo Jorge Junior
 
-    Email: paulojorgejunior@gmail.com
-
-    http://paulojjunior.com'
+    Email: paulojorgejunior@gmail.com'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a026c757c2112242973ca87848e9f4a, type: 2}
   m_sharedMaterial: {fileID: 4276849765512276114, guid: 4a026c757c2112242973ca87848e9f4a,
@@ -906,7 +904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.46100003}
   m_AnchorMax: {x: 0.98333335, y: 0.7233125}
-  m_AnchoredPosition: {x: 8.99884, y: 5.8197}
+  m_AnchoredPosition: {x: 8.998779, y: 5.819702}
   m_SizeDelta: {x: -358.5701, y: -168.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &807185339
@@ -1812,7 +1810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.042000003}
   m_AnchorMax: {x: 1, y: 0.40468752}
-  m_AnchoredPosition: {x: 0.00018310547, y: 0}
+  m_AnchoredPosition: {x: 0.00024414062, y: 0}
   m_SizeDelta: {x: 137.78, y: 88.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2076434347
